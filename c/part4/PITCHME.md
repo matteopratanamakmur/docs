@@ -25,18 +25,10 @@ C 言語における文字列操作は、NULL 終端文字（'\0'）で終わっ
 
 ### 例
 
-```
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    const char* str = "test_\0data";
-    printf("%d\n", (int)strlen(str));
-    return 0;
-}
-```
+---?code=main.c
 
 実行結果は、以下のように 5 になる
+
 ```
 [vagrant@localhost ~]$ ./a.out 
 5
