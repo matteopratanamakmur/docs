@@ -21,10 +21,7 @@ C 言語における文字列操作は、NULL 終端文字（'\0'）で終わっ
 
 => 途中に NULL 終端文字が存在する場合に、ここを文字列の最後としてしまうことがある。
 
----
-
-### 例
-@code[golang zoom-21 code-noblend](c/part4/main.c)
+---?code=c/part4/main.c&lang=c
 
 この場合には、実行結果は、5 になる  
 （NULL 終端文字までの文字列）
