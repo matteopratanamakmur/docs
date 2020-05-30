@@ -26,6 +26,12 @@ C 言語における文字列操作は、NULL 終端文字（'\0'）で終わっ
 この場合には、実行結果は、5 になる  
 （NULL 終端文字までの文字列）
 
+```
+[vagrant@localhost ~]$ gcc main.c
+[vagrant@localhost ~]$ ./a.out
+5
+```
+
 ---
 
 ### まとめ
