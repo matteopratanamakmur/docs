@@ -25,7 +25,7 @@ C 言語における文字列操作は、NULL 終端文字（'\0'）で終わっ
 
 ### 例
 
----?code=c/part4/main.c
+---?code=c/part4/main.c&lang=c
 
 実行結果は、以下のように 5 になる
 
