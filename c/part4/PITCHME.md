@@ -69,11 +69,15 @@ int main() {
 }
 ```
 
+---
+
+#### 実行結果
+
 これを実行すると、次のようになる  
 （途中までしかコピーできていない）
 
 ```
-[vagrant@localhost ~]$ g++ main.c
+[vagrant@localhost ~]$ g++ main_2.c
 [vagrant@localhost ~]$ ./a.out
 5
 [0][src][t][dst][t]
@@ -86,6 +90,44 @@ int main() {
 [7][src][a][dst][x]
 [8][src][t][dst][x]
 [9][src][a][dst][x]
+[10][src][][dst][]
+```
+
+#### 対策
+```
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char src[11] = "test_\0data";
+    char dst[11] = "xxxxxxxxxx";
+    memcpy(dst, src, 11);
+    for (int i=0; i<11; i++) {
+         printf("[%d][src][%c][dst][%c]\n", i, src[i], dst[i]);
+    }
+    return 0;
+}
+```
+
+memcpy によって、サイズを指定してコピー
+
+#### 実行結果
+
+この場合には、実行結果は以下の通り  
+（NULL 以降もコピーできている）
+
+```
+[vagrant@localhost ~]$ ./a.out
+[0][src][t][dst][t]
+[1][src][e][dst][e]
+[2][src][s][dst][s]
+[3][src][t][dst][t]
+[4][src][_][dst][_]
+[5][src][][dst][]
+[6][src][d][dst][d]
+[7][src][a][dst][a]
+[8][src][t][dst][t]
+[9][src][a][dst][a]
 [10][src][][dst][]
 ```
 
