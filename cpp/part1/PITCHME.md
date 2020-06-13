@@ -13,7 +13,7 @@ C++ に置いて、private 変数 / 関数は、
 
 ---
 
-#### 例
+#### 例（Hello.hpp / Hello.cpp）
 ```
 #include <string>
 
@@ -48,6 +48,23 @@ hpp / cpp ファイルを見てみると、
 
 ---
 
+Hello.hpp
+```
+#include <string>
+
+class Hello {
+  public:
+    Hello();
+    void greet();
+  private:
+    std::string m_secret_name;
+};
+```
+
+@[7-8](private 変数が見えている)
+
+---
+
 ### 3. pimpl を利用して書き直す
 hpp 中には、「impl」だけが private として定義されている。
 
@@ -55,6 +72,53 @@ hpp 中には、「impl」だけが private として定義されている。
 hpp ファイルからは見えなくなっている。
 
 ---
+
+#### 例（Hello2.hpp）
+```
+#include <memory>
+
+class Hello2 {
+  public:
+    Hello2();
+    ~Hello2();
+    void greet();
+  private:
+    class Impl;
+    std::unique_ptr<Impl> pimpl;
+};
+```
+
+---
+#### 例（Hello2.cpp）
+```
+#include "Hello2.hpp"
+#include <iostream>
+#include <string>
+
+class Hello2::Impl
+{
+  public:
+    Impl() : m_secret_name("秘密の名前") {}
+    ~Impl() {}
+
+    void greet() {
+      std::cout << "hello " << this->m_secret_name << std::endl;
+    }
+
+  private:
+    std::string m_secret_name;
+};
+
+Hello2::Hello2() : pimpl(new Hello2::Impl()) {
+}
+
+Hello2::~Hello2() {
+}
+
+void Hello2::greet() {
+  this->pimpl->greet();
+}
+```
 
 ### 4. メリット
 
