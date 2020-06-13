@@ -25,6 +25,8 @@ class Hello {
 };
 ```
 
+---
+
 Hello.cpp
 ```
 #include "Hello.hpp"
