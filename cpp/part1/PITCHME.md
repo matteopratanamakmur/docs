@@ -133,7 +133,8 @@ void Hello2::greet() {
 }
 ```
 
-@[25-27](private 変数は pimpl のみ)
+@[15-16](private 変数が cpp に移動)
+@[25-27](pimpl 経由で呼び出す)
 
 ---
 
