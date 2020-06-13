@@ -13,7 +13,9 @@ C++ に置いて、private 変数 / 関数は、
 
 ---
 
-#### 例（Hello.hpp / Hello.cpp）
+#### 例
+Hello.hpp
+
 ```
 #include <string>
 
@@ -25,6 +27,11 @@ class Hello {
     std::string m_secret_name;
 };
 ```
+
+---
+
+#### 例
+Hello.cpp
 
 ```
 #include "Hello.hpp"
@@ -66,14 +73,15 @@ class Hello {
 ---
 
 ### 3. pimpl を利用して書き直す
-hpp 中には、「impl」だけが private として定義されている。
+hpp には「impl」だけが private として定義されている。
 
 それ以外の private 変数 / 関数は cpp 側に定義されており、
-hpp ファイルからは見えなくなっている。
+hpp ファイルからは見えない。
 
 ---
 
-#### 例（Hello2.hpp）
+#### 例
+Hello2.hpp
 ```
 #include <memory>
 
@@ -89,7 +97,9 @@ class Hello2 {
 ```
 
 ---
-#### 例（Hello2.cpp）
+
+#### 例
+Hello2.cpp
 ```
 #include "Hello2.hpp"
 #include <iostream>
