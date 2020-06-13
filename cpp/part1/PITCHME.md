@@ -11,6 +11,8 @@
 C++ に置いて、private 変数 / 関数は、
 本当の意味で private になっていない（変数名 / 関数名が外部から見える）
 
+---
+
 #### 例
 Hello.hpp
 ```
@@ -24,8 +26,6 @@ class Hello {
     std::string m_secret_name;
 };
 ```
-
----
 
 Hello.cpp
 ```
