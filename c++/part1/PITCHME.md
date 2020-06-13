@@ -12,6 +12,7 @@ C++ に置いて、private 変数 / 関数は、
 本当の意味で private になっていない（変数名 / 関数名が外部から見える）
 
 #### 例
+Hello.hpp
 ```
 #include <string>
 
@@ -24,6 +25,7 @@ class Hello {
 };
 ```
 
+Hello.cpp
 ```
 #include "Hello.hpp"
 #include <iostream>
