@@ -14,7 +14,6 @@ C++ に置いて、private 変数 / 関数は、
 ---
 
 #### 例
-Hello.hpp
 ```
 #include <string>
 
@@ -27,7 +26,6 @@ class Hello {
 };
 ```
 
-Hello.cpp
 ```
 #include "Hello.hpp"
 #include <iostream>
