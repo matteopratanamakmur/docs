@@ -48,6 +48,35 @@ void Hello::greet() {
 
 ---
 
+#### 例
+main.cpp
+
+```
+#include <iostream>
+#include "Hello.hpp"
+
+int main() {
+    Hello hello;
+    hello.greet();
+    return 0;
+}
+```
+
+---
+
+#### 例
+実行してみる
+
+```
+[matteo's PC] ~/Work/docs/c++/part1
+% g++ main.cpp Hello.cpp
+[matteo's PC] ~/Work/docs/c++/part1
+% ./a.out
+hello 秘密の名前
+```
+
+---
+
 ### 2. private 変数 / 関数
 hpp / cpp ファイルを見てみると、
 次のように hpp ファイル中に private 変数 / 関数が書かれており、
@@ -135,6 +164,35 @@ void Hello2::greet() {
 
 @[15-16](private 変数が cpp に移動)
 @[25-27](pimpl 経由で呼び出す)
+
+---
+
+#### 例
+main2.cpp
+
+```
+#include <iostream>
+#include "Hello2.hpp"
+
+int main() {
+    Hello2 hello2;
+    hello2.greet();
+    return 0;
+}
+```
+
+---
+
+#### 例
+実行してみる
+
+```
+[matteo's PC] ~/Work/docs/c++/part1
+% g++ main2.cpp Hello2.cpp
+[matteo's PC] ~/Work/docs/c++/part1
+% ./a.out
+hello 秘密の名前
+```
 
 ---
 
