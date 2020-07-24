@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>test page</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="dvHeader">
+        <label id="lbl">Hello World</label>
+        <button id="btn">
+            Button 1!
+        </button>
+        <button id="btn1">
+            Button 2!
+        </button>
+    </div>
+    <script>
+        $("#btn").on("click", (event) => {
+            var el = $(event.currentTarget);
+            el.parent().find("#lbl").html("a");
+        });
+
+        $("#btn1").on("click", function(){
+            var el = $(this);
+            el.parent().find("#lbl").html("a"); 
+        });
+    </script>
+</body>
+</html>
